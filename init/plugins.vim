@@ -32,6 +32,9 @@ call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
 " 快捷键工具
 Plug 'liuchengxu/vim-which-key'
 
+" 漂亮的弹窗
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+
 
 "----------------------------------------------------------------------
 " 基础插件

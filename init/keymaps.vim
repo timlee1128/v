@@ -47,9 +47,24 @@ let g:which_key_map.6 = 'which_key_ignore'
 
 
 "----------------------------------------------------------------------
-" 文件快捷键定义
+" 查找快捷键定义
 "----------------------------------------------------------------------
-let g:which_key_map['f'] = {'name': '+files'}
+let g:which_key_map['f'] = {'name': '+find'}
 
 map <leader>ft :NERDTreeToggle<CR>
-let g:which_key_map.f.t = 'open file tree'
+let g:which_key_map.f.t = 'Open file tree'
+
+nnoremap <silent> <Leader>fw :<C-u>Clap grep<CR>
+let g:which_key_map.f.w = 'Find Word'
+
+nnoremap <silent> <Leader>ff :<C-u>Clap files ++finder=rg --ignore --hidden --files<cr>
+let g:which_key_map.f.f = 'Find File'
+
+
+"----------------------------------------------------------------------
+" 工具箱
+"----------------------------------------------------------------------
+let g:which_key_map['t'] = {'name': '+tool'}
+
+nnoremap <silent> <Leader>tc :<C-u>Clap<CR>
+let g:which_key_map.t.c = 'Clap'
