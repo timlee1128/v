@@ -25,16 +25,6 @@ endfunc
 call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
 
 
-"----------------------------------------------------------------------
-" 默认插件 
-"----------------------------------------------------------------------
-
-" 快捷键工具
-Plug 'liuchengxu/vim-which-key'
-
-" 漂亮的弹窗
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-
 
 "----------------------------------------------------------------------
 " 基础插件
@@ -47,3 +37,43 @@ endif
 " 结束插件安装
 "----------------------------------------------------------------------
 call plug#end()
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+"----------------------------------------------------------------------
+" 默认插件 
+"----------------------------------------------------------------------
+
+" 快捷键工具
+call dein#add('liuchengxu/vim-which-key')
+
+" 漂亮的弹窗
+call dein#add('liuchengxu/vim-clap', {
+\ 'build': 'sh install.sh'
+\})
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
