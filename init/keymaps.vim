@@ -60,6 +60,11 @@ let g:which_key_map.f.w = 'Find Word'
 nnoremap <silent> <Leader>ff :<C-u>Clap files ++finder=rg --ignore --hidden --files<cr>
 let g:which_key_map.f.f = 'Find File'
 
+nnoremap <silent> <Leader>fv :<C-u>Clap grep ++query=@visual<CR>
+let g:which_key_map.f.v = 'Find visual text'
+
+nnoremap <silent> <Leader>fu :<C-u>Clap grep ++query=<cword><cr>
+let g:which_key_map.f.u = 'Find the word under cursor'
 
 "----------------------------------------------------------------------
 " 工具箱
