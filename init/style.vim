@@ -276,3 +276,13 @@ endfunc
 set tabline=%!Vim_NeatTabLine()
 set guitablabel=%{Vim_NeatGuiTabLabel()}
 set guitabtooltip=%{Vim_NeatGuiTabTip()}
+
+
+"----------------------------------------------------------------------
+" which-key 设置
+"----------------------------------------------------------------------
+highlight default link WhichKey          Function
+highlight default link WhichKeySeperator Number
+highlight default link WhichKeyGroup     Keyword
+highlight default link WhichKeyDesc      Identifier
+highlight WhichKeyFloating  guifg=#000000 ctermfg=0
