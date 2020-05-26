@@ -66,6 +66,29 @@ let g:which_key_map.f.v = 'Find visual text'
 nnoremap <silent> <Leader>fu :<C-u>Clap grep ++query=<cword><cr>
 let g:which_key_map.f.u = 'Find the word under cursor'
 
+
+"----------------------------------------------------------------------
+" 跳转快捷键定义
+"----------------------------------------------------------------------
+let g:which_key_map['j'] = {'name': '+jump'}
+
+let g:which_key_map.j.e = {'name': 'Jump to error'}
+nmap <silent> <Leader>jen <Plug>(coc-diagnostic-next)
+let g:which_key_map.j.e.n = 'Jump to next error'
+nmap <silent> <Leader>jep <Plug>(coc-diagnostic-prev)
+let g:which_key_map.j.e.p = 'Jump to prev error'
+
+nmap <silent> <Leader>jd <Plug>(coc-definition)
+let g:which_key_map.j.d = 'Jump to definition'
+nmap <silent> <Leader>jc <Plug>(coc-declaration)
+let g:which_key_map.j.c = 'Jump to declaration'
+nmap <silent> <Leader>ji <Plug>(coc-implementation)
+let g:which_key_map.j.i = 'Jump to implementation'
+nmap <silent> <Leader>jr <Plug>(coc-references)
+let g:which_key_map.j.r = 'Jump to references'
+nmap <silent> <Leader>jl <Plug>(coc-openlink)
+let g:which_key_map.j.l = 'Jump to link'
+
 "----------------------------------------------------------------------
 " 工具箱
 "----------------------------------------------------------------------
@@ -73,3 +96,21 @@ let g:which_key_map['t'] = {'name': '+tool'}
 
 nnoremap <silent> <Leader>tc :<C-u>Clap<CR>
 let g:which_key_map.t.c = 'Clap'
+
+
+"----------------------------------------------------------------------
+" Coc
+"----------------------------------------------------------------------
+" 使用 <tab> 补全
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+" 使用 <shift-tab> 反向补全
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction

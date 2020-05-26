@@ -296,9 +296,9 @@ if has('gui_running')
   set guioptions-=m
   set linespace=2
   if has('gui_win32')
-    set guifont=Consolas:h14
+    set guifont=Consolas:h12
   else
-    set guifont=Hack\ Regular\ Nerd\ Font\ Complete:h14
+    set guifont=Hack\ Regular\ Nerd\ Font\ Complete:h12
   endif
 endif
 
