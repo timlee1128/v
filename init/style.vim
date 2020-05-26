@@ -2,6 +2,9 @@
 " 显示设置
 "----------------------------------------------------------------------
 
+" 启动时开启全屏
+set fu
+
 " 总是显示状态栏
 set laststatus=2
 
@@ -276,6 +279,23 @@ endfunc
 set tabline=%!Vim_NeatTabLine()
 set guitablabel=%{Vim_NeatGuiTabLabel()}
 set guitabtooltip=%{Vim_NeatGuiTabTip()}
+
+
+"----------------------------------------------------------------------
+" Gui 设置
+"----------------------------------------------------------------------
+if has('gui_running')
+  set guioptions-=T           " No toolbar
+  set guioptions-=r
+  set guioptions-=L
+  set guioptions-=m
+  set linespace=2
+  if has('gui_win32')
+    set guifont=Consolas:h14
+  else
+    set guifont=Hack\ Regular\ Nerd\ Font\ Complete:h13
+  endif
+endif
 
 
 "----------------------------------------------------------------------
