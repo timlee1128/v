@@ -18,52 +18,49 @@ function! s:path(path)
 	return substitute(path, '\\', '/', 'g')
 endfunc
 
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
+" Required:
+set runtimepath+=~/.cache/vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('~/.cache/v')
+  call dein#begin('~/.cache/v')
 "----------------------------------------------------------------------
 " 在 ~/.vim/bundles 下安装插件
 "----------------------------------------------------------------------
-call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
+" Let dein manage dein
+" Required:
+call dein#add('~/.cache/v/repos/github.com/Shougo/dein.vim')
+call dein#add('wsdjeg/dein-ui.vim')
 
+"----------------------------------------------------------------------
+" 默认插件 
+"----------------------------------------------------------------------
+" 快捷键工具
+call dein#add('liuchengxu/vim-which-key', {
+			\ 'on_cmd': '[Whichkey, Whichkey!]',
+			\ 'hook_add': join(['let g:which_key_map = {}', 'let mapleader="\<Space>"'], '\n'),
+			\	'hook_post_source': 'call which_key#register("<Space>", "g:which_key_map")'
+			\})
+
+" 漂亮的弹窗
+call dein#add('liuchengxu/vim-clap', {'build': 'sh install.sh'})
 
 
 "----------------------------------------------------------------------
 " 基础插件
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'basic') >= 0
-	Plug 'preservim/nerdtree'
+	call dein#add('preservim/nerdtree')
 endif
+
 
 "----------------------------------------------------------------------
 " 结束插件安装
 "----------------------------------------------------------------------
-call plug#end()
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-"----------------------------------------------------------------------
-" 默认插件 
-"----------------------------------------------------------------------
-
-" 快捷键工具
-call dein#add('liuchengxu/vim-which-key')
-
-" 漂亮的弹窗
-call dein#add('liuchengxu/vim-clap', {
-\ 'build': 'sh install.sh'
-\})
-
   " Required:
   call dein#end()
   call dein#save_state()
@@ -73,7 +70,10 @@ endif
 filetype plugin indent on
 syntax enable
 
+
+"----------------------------------------------------------------------
 " If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+"----------------------------------------------------------------------
+"if dein#check_install()
+" call dein#install()
+"endif

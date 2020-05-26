@@ -1,9 +1,7 @@
 "----------------------------------------------------------------------
 " vim-which-key 配置
 "----------------------------------------------------------------------
-let mapleader="\<Space>"
-let g:which_key_map = {}
-call which_key#register('<Space>', "g:which_key_map")
+
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 
@@ -51,6 +49,7 @@ let g:which_key_map.6 = 'which_key_ignore'
 "----------------------------------------------------------------------
 let g:which_key_map['f'] = {'name': '+find'}
 
+map <C-n> :NERDTreeToggle<CR>
 map <leader>ft :NERDTreeToggle<CR>
 let g:which_key_map.f.t = 'Open file tree'
 
