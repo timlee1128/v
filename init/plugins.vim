@@ -54,6 +54,15 @@ if index(g:bundle_group, 'basic') >= 0
 	" 一次性安装一大堆 colorscheme
 	Plug 'flazz/vim-colorschemes'
 
+	" 侧栏行号相对化
+	Plug 'myusuf3/numbers.vim'
+
+	" nerdtree 美化
+	Plug 'vwxyutarooo/nerdtree-devicons-syntax'     
+
+	" 界面 icon 美化
+	Plug 'ryanoasis/vim-devicons'
+
 	" 用于在侧边符号栏显示 git/svn 的 diff
 	Plug 'mhinz/vim-signify'
 	" signify 调优
@@ -69,6 +78,16 @@ if index(g:bundle_group, 'basic') >= 0
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
+	
+	" 增加cs, ds, ys等操作符, 用来快速输入包裹符号
+	Plug 'tpope/vim-surround'
+
+	" 注释
+	Plug 'tpope/vim-commentary'
+
+	" 符号配对美化
+	Plug 'luochen1990/rainbow'
+	let g:rainbow_active=1
 endif
 
 
@@ -85,8 +104,12 @@ if index(g:bundle_group, 'textobj') >= 0
 	" 语法文本对象：iy/ay 基于语法的文本对象
 	Plug 'kana/vim-textobj-syntax'
 
-	" 函数文本对象：if/af 支持 c/c++/vim/java
-	Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
+	" 函数文本对象：if/af 支持 c/c++/vim/java/javascript
+	Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java', 'javascript'] }
+	Plug 'thinca/vim-textobj-function-javascript', {'for': ['javascript']}
+
+	" 注释文本对象：ac/ic
+	Plug 'glts/vim-textobj-comment'
 
 	" 参数文本对象：i,/a, 包括参数或者列表元素
 	Plug 'sgur/vim-textobj-parameter'
@@ -96,6 +119,9 @@ if index(g:bundle_group, 'textobj') >= 0
 
 	" 提供 uri/url 的文本对象，iu/au 表示
 	Plug 'jceb/vim-textobj-uri'
+
+	" xml 属性文本对象：ax/ix
+	Plug 'whatyouhide/vim-textobj-xmlattr'
 endif
 
 
