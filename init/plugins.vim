@@ -142,6 +142,7 @@ if index(g:bundle_group, 'airline') >= 0
 	let g:airline#extensions#fugitiveline#enabled = 1
 	let g:airline#extensions#csv#enabled = 0
 	let g:airline#extensions#vimagit#enabled = 1
+  let g:airline#extensions#coc#enabled = 1
 
 	function! WindowNumber(...)
     let builder = a:1
@@ -156,7 +157,7 @@ endif
 
 
 "----------------------------------------------------------------------
-" airline
+" coc
 "----------------------------------------------------------------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -177,7 +178,22 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
+let g:coc_global_extensions=[
+      \ 'coc-json',
+      \ 'coc-tsserver',
+      \ 'coc-css',
+      \ 'coc-eslint',
+      \ 'coc-ecdict',
+      \ 'coc-emmet',
+      \ 'coc-vetur',
+      \ 'coc-vimlsp'
+      \]
 
+" coc-vimlsp 文档高亮
+let g:markdown_fenced_languages = [
+      \ 'vim',
+      \ 'help'
+      \]
 "----------------------------------------------------------------------
 " 结束插件安装
 "----------------------------------------------------------------------

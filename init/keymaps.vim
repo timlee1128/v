@@ -66,6 +66,9 @@ let g:which_key_map.f.v = 'Find visual text'
 nnoremap <silent> <Leader>fu :<C-u>Clap grep ++query=<cword><cr>
 let g:which_key_map.f.u = 'Find the word under cursor'
 
+nnoremap <silent> <leader>fc :<C-u>CocConfig<CR>
+let g:which_key_map.f.c = 'Open Coc Config'
+
 
 "----------------------------------------------------------------------
 " 跳转快捷键定义
@@ -96,6 +99,9 @@ let g:which_key_map['t'] = {'name': '+tool'}
 
 nnoremap <silent> <Leader>tc :<C-u>Clap<CR>
 let g:which_key_map.t.c = 'Clap'
+
+nnoremap <silent> <Leader>tt :call CocActionAsync('doHover')<CR>
+let g:which_key_map.t.t = 'Translate the word under cursor'
 
 
 "----------------------------------------------------------------------
