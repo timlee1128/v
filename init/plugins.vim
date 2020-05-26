@@ -40,6 +40,7 @@ Plug 'easymotion/vim-easymotion'
 " 表格对齐，使用命令 Tabularize
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 
+Plug 'mattn/emmet-vim'
 
 "----------------------------------------------------------------------
 " 基础插件
