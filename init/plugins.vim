@@ -3,7 +3,7 @@
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['tags', 'airline']
+	let g:bundle_group += ['tags', 'airline', 'coc']
 endif
 
 
@@ -153,6 +153,37 @@ if index(g:bundle_group, 'airline') >= 0
 	autocmd User AirlineAfterInit call airline#add_statusline_func('WindowNumber')
 	autocmd User AirlineAfterInit call airline#add_inactive_statusline_func('WindowNumber')
 endif
+
+
+"----------------------------------------------------------------------
+" airline
+"----------------------------------------------------------------------
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 
 "----------------------------------------------------------------------
 " 结束插件安装
