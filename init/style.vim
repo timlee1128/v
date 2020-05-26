@@ -20,7 +20,7 @@ else
 endif
 
 " 总是显示标签栏
-set showtabline=2
+"set showtabline=2
 
 " 设置显示制表符等隐藏字符
 "set list
