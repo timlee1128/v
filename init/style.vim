@@ -298,7 +298,7 @@ if has('gui_running')
   if has('gui_win32')
     set guifont=Consolas:h14
   else
-    set guifont=Hack\ Regular\ Nerd\ Font\ Complete:h13
+    set guifont=Hack\ Regular\ Nerd\ Font\ Complete:h14
   endif
 endif
 
