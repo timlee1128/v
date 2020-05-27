@@ -311,3 +311,10 @@ highlight default link WhichKeySeperator Number
 highlight default link WhichKeyGroup     Keyword
 highlight default link WhichKeyDesc      Identifier
 highlight WhichKeyFloating  guifg=#000000 ctermfg=0
+
+
+"----------------------------------------------------------------------
+" clap 设置
+"----------------------------------------------------------------------
+let g:clap_theme = 'material_design_dark'
+let g:clap_layout = { 'relative': 'editor' }
