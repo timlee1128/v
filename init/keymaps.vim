@@ -92,6 +92,9 @@ let g:which_key_map.j.r = 'Jump to references'
 nmap <silent> <Leader>jl <Plug>(coc-openlink)
 let g:which_key_map.j.l = 'Jump to link'
 
+map <silent> <Leader>jf <Plug>(easymotion-overwin-f)
+let g:which_key_map.j.f = 'Jump to finded char'
+
 "----------------------------------------------------------------------
 " 工具箱
 "----------------------------------------------------------------------
