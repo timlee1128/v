@@ -69,6 +69,9 @@ let g:which_key_map.f.u = 'Find the word under cursor'
 nnoremap <silent> <leader>fc :<C-u>CocConfig<CR>
 let g:which_key_map.f.c = 'Open Coc Config'
 
+nnoremap <silent> <leader>fs :<C-u>source %<CR>
+let g:which_key_map.f.s = 'Source current file'
+
 
 "----------------------------------------------------------------------
 " 跳转快捷键定义
