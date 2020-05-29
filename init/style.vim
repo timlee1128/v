@@ -2,17 +2,16 @@
 " 显示设置
 "----------------------------------------------------------------------
 
-" 启动时开启全屏
-set fu
-
 " 总是显示状态栏
 set laststatus=2
 
 " 总是显示行号
 set number
 
-" 总是显示侧边栏（用于显示 mark/gitdiff/诊断信息）
-if has("patch-8.1.1564")
+" 侧边栏（用于显示 mark/gitdiff/诊断信息）
+if has('nvim')
+  set signcolumn=auto
+elseif has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
   set signcolumn=number
 else
@@ -302,6 +301,15 @@ if has('gui_running')
   endif
 endif
 
+if has('nvim')
+  autocmd VimEnter * call GuiWindowFullScreen(1)
+  if exists('g:GuiLoaded')
+    GuiFont! Hack Nerd Font:style=Bold:h14
+  endif
+else
+  " 启动时开启全屏
+  set fu
+endif
 
 "----------------------------------------------------------------------
 " which-key 设置
