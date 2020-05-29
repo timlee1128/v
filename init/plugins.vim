@@ -143,7 +143,14 @@ if index(g:bundle_group, 'airline') >= 0
   let g:airline_right_sep = ''
   let g:airline_right_alt_sep = ''
 	let g:airline_exclude_preview = 1
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.linenr = '␤'
+  let g:airline_symbols.maxlinenr = ''
 	let g:airline_theme='deus'
+  let g:airline_skip_empty_sections = 1
 	let g:airline#extensions#branch#enabled = 1
 	let g:airline#extensions#syntastic#enabled = 1
 	let g:airline#extensions#fugitiveline#enabled = 1
