@@ -74,7 +74,7 @@ if index(g:bundle_group, 'basic') >= 0
   autocmd BufEnter * call s:defx_cursor_set()
 
   function! s:defx_cursor_set() abort
-    if has('nvim')
+    if has('nvim') && exists('g:GuiLoaded')
       if &filetype !=# 'defx'
         set guicursor=
         set nocul
