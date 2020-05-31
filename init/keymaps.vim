@@ -99,6 +99,37 @@ map <silent> <Leader>jf <Plug>(easymotion-overwin-f)
 let g:which_key_map.j.f = 'Jump to finded char'
 
 "----------------------------------------------------------------------
+" Git 快捷键定义
+"----------------------------------------------------------------------
+let g:which_key_map.g = {'name': '+Git'}
+
+let g:which_key_map.g.s = 'Git status'
+map <silent> <Leader>gs :Gstatus<CR>
+
+let g:which_key_map.g.d = 'Git diff vert split'
+map <silent> <Leader>gd :Gvdiffsplit<CR>
+
+let g:which_key_map.g.b = "Git blame"
+map <silent> <Leader>gb :Glame<CR>
+
+let g:which_key_map.g.a = 'Git add'
+map <silent> <Leader>ga :Gwrite<CR>
+
+let g:which_key_map.g.c = 'Git commit'
+map <silent> <Leader>gc :Gcommit<CR>
+
+let g:which_key_map.g.p = 'Git push'
+map <silent> <Leader>gp :Gpush<CR>
+
+let g:which_key_map.g.P = 'Git pull'
+map <silent> <Leader>gp :Gpull<CR>
+
+let g:which_key_map.g.f = 'Git fetch'
+map <silent> <Leader>gf :Gfetch<CR>
+
+let g:which_key_map.g.l = 'Git log'
+map <silent> <Leader>gl :Gllog<CR>
+"----------------------------------------------------------------------
 " 工具箱
 "----------------------------------------------------------------------
 let g:which_key_map['t'] = {'name': '+tool'}
