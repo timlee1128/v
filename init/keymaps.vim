@@ -18,6 +18,7 @@ let g:which_key_disable_default_offset = 1
 let g:which_key_map['w'] = {
 	\ 'name' : '+windows' ,
 	\ 'w' : ['<C-W>w'     , 'other-window']          ,
+  \ 'n' : ['vnew'     , 'new window'],
 	\ 'd' : ['<C-W>c'     , 'delete-window']         ,
 	\ 's' : ['<C-W>s'     , 'split-window-below']    ,
 	\ 'v' : ['<C-W>v'     , 'split-window-right']    ,
@@ -25,12 +26,17 @@ let g:which_key_map['w'] = {
 	\ 'j' : ['<C-W>j'     , 'window-below']          ,
 	\ 'l' : ['<C-W>l'     , 'window-right']          ,
 	\ 'k' : ['<C-W>k'     , 'window-up']             ,
-	\ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
-	\ 'J' : ['resize +5'  , 'expand-window-below']   ,
-	\ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
-	\ 'K' : ['resize -5'  , 'expand-window-up']      ,
+	\ 'H' : ['<C-W>H'     , 'Move window to the very left']    ,
+	\ 'J' : ['<C-W>J'     , 'Move window to the very bottom']   ,
+	\ 'L' : ['<C-W>L'     , 'Move window to the very right']   ,
+	\ 'K' : ['<C-W>K'     , 'Move window to the very top']      ,
 	\ '=' : ['<C-W>='     , 'balance-window']        ,
 	\ }
+
+nnoremap <c-h> <c-w>10<
+nnoremap <c-l> <c-w>10>
+map <c-j> :resize +20<CR>
+map <c-k> :resize -20<CR>
 
 nnoremap <silent><leader>1 :1wincmd w<CR>
 nnoremap <silent><leader>2 :2wincmd w<CR>
