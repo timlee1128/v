@@ -57,8 +57,21 @@ let g:which_key_map.6 = 'which_key_ignore'
 "----------------------------------------------------------------------
 let g:which_key_map['f'] = {'name': '+find'}
 
-map <leader>ft :NERDTreeToggle<CR>
+" map <leader>ft :NERDTreeToggle<CR>
+map <silent><leader>ft :call Defx_style()<cr>
 let g:which_key_map.f.t = 'Open file tree'
+
+function! Defx_style() abort
+  call defx#custom#option('_', {
+        \ 'winwidth': 28,
+        \ 'split': 'vertical',
+        \ 'direction': 'topleft',
+        \ 'columns': 'mark:indent:git:icons:filename:type',
+        \ 'toggle': 1
+        \})
+
+  :Defx
+endfunction
 
 nnoremap <silent> <Leader>fw :<C-u>Clap grep<CR>
 let g:which_key_map.f.w = 'Find Word'
