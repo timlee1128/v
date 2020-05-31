@@ -128,7 +128,7 @@ let g:which_key_map.g.p = 'Git push'
 map <silent> <Leader>gp :Gpush<CR>
 
 let g:which_key_map.g.P = 'Git pull'
-map <silent> <Leader>gp :Gpull<CR>
+map <silent> <Leader>gP :Gpull<CR>
 
 let g:which_key_map.g.f = 'Git fetch'
 map <silent> <Leader>gf :Gfetch<CR>
