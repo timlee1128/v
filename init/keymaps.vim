@@ -116,7 +116,7 @@ let g:which_key_map.g.d = 'Git diff vert split'
 map <silent> <Leader>gd :Gvdiffsplit<CR>
 
 let g:which_key_map.g.b = "Git blame"
-map <silent> <Leader>gb :Glame<CR>
+map <silent> <Leader>gb :Gblame<CR>
 
 let g:which_key_map.g.a = 'Git add'
 map <silent> <Leader>ga :Gwrite<CR>
