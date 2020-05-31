@@ -16,21 +16,21 @@ let g:which_key_disable_default_offset = 1
 "----------------------------------------------------------------------
 
 let g:which_key_map['w'] = {
-	\ 'name' : '+windows' ,
-	\ 'w' : ['<C-W>w'     , 'other-window']          ,
-  \ 'n' : ['vnew'     , 'new window'],
-	\ 'd' : ['<C-W>c'     , 'delete-window']         ,
-	\ 's' : ['<C-W>s'     , 'split-window-below']    ,
-	\ 'v' : ['<C-W>v'     , 'split-window-right']    ,
-	\ 'h' : ['<C-W>h'     , 'window-left']           ,
-	\ 'j' : ['<C-W>j'     , 'window-below']          ,
-	\ 'l' : ['<C-W>l'     , 'window-right']          ,
-	\ 'k' : ['<C-W>k'     , 'window-up']             ,
-	\ 'H' : ['<C-W>H'     , 'Move window to the very left']    ,
-	\ 'J' : ['<C-W>J'     , 'Move window to the very bottom']   ,
-	\ 'L' : ['<C-W>L'     , 'Move window to the very right']   ,
-	\ 'K' : ['<C-W>K'     , 'Move window to the very top']      ,
-	\ '=' : ['<C-W>='     , 'balance-window']        ,
+	\ 'name' : '+windows'      ,
+	\ 'w' : ['<C-W>w'          , 'other-window']                   ,
+  \ 'n' : ['vnew'            , 'new window']                     ,
+	\ 'd' : ['<C-W>c'          , 'delete-window']                  ,
+	\ 's' : ['<C-W>s'          , 'split-window-below']             ,
+	\ 'v' : ['<C-W>v'          , 'split-window-right']             ,
+	\ 'h' : ['<C-W>h'          , 'window-left']                    ,
+	\ 'j' : ['<C-W>j'          , 'window-below']                   ,
+	\ 'l' : ['<C-W>l'          , 'window-right']                   ,
+	\ 'k' : ['<C-W>k'          , 'window-up']                      ,
+	\ 'H' : ['<C-W>H'          , 'Move window to the very left']   ,
+	\ 'J' : ['<C-W>J'          , 'Move window to the very bottom'] ,
+	\ 'L' : ['<C-W>L'          , 'Move window to the very right']  ,
+	\ 'K' : ['<C-W>K'          , 'Move window to the very top']    ,
+	\ '=' : ['<C-W>='          , 'balance-window']                 ,
 	\ }
 
 nnoremap <c-h> <c-w>10<
