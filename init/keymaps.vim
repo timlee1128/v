@@ -120,6 +120,9 @@ let g:which_key_map.j.l = 'Jump to link'
 map <silent> <Leader>jf <Plug>(easymotion-overwin-f)
 let g:which_key_map.j.f = 'Jump to finded char'
 
+map <silent><Leader>jt :<c-u>Vista!!<CR>
+let g:which_key_map.j.t = 'Jump to tag'
+
 "----------------------------------------------------------------------
 " Git 快捷键定义
 "----------------------------------------------------------------------

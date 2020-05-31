@@ -51,6 +51,10 @@ if has('nvim')
   Plug 'equalsraf/neovim-gui-shim'
 endif
 
+Plug 'liuchengxu/vista.vim'
+let g:vista_sidebar_width = 40
+let g:vista_default_executive = 'coc'
+
 "----------------------------------------------------------------------
 " 基础插件
 "----------------------------------------------------------------------
