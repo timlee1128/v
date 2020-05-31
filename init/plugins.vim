@@ -44,6 +44,9 @@ Plug 'mattn/emmet-vim'
 
 Plug 'tpope/vim-repeat'
 
+Plug 'skywind3000/asyncrun.vim'
+let g:asyncrun_open = 8
+
 if has('nvim')
   Plug 'equalsraf/neovim-gui-shim'
 endif
