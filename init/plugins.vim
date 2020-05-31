@@ -203,6 +203,12 @@ let g:coc_global_extensions=[
       \ 'coc-vimlsp'
       \]
 
+if has('nvim')
+  call add(g:coc_global_extensions, 'coc-actions')
+elseif index(g:coc_global_extensions, 'coc-actions') > 0
+  call remove(g:coc_global_extensions, index(g:coc_global_extensions, 'coc-actions'))
+endif
+
 " coc-vimlsp 文档高亮
 let g:markdown_fenced_languages = [
       \ 'vim',
