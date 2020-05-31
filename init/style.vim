@@ -303,6 +303,7 @@ endif
 
 if has('nvim')
   autocmd VimEnter * call GuiWindowFullScreen(1)
+  GuiTabline 0
   if exists('g:GuiLoaded')
     GuiFont! Hack Nerd Font:style=Bold:h14
   endif
