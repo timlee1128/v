@@ -63,19 +63,21 @@ if index(g:bundle_group, 'basic') >= 0
   Plug 'kristijanhusak/defx-git'
   if !has('nvim')
     Plug 'roxma/nvim-yarp'
-    Plug 'vim-hug-neovim-rpc'
+    Plug 'roxma/vim-hug-neovim-rpc'
   endif
 
 	autocmd FileType defx call s:defx_my_settings()
   autocmd BufEnter * call s:defx_cursor_set()
 
   function! s:defx_cursor_set() abort
-    if &filetype !=# 'defx'
-      set guicursor=
-      set nocul
-    else
-      set guicursor=n-v-c:hor1
-      set cul
+    if has('nvim')
+      if &filetype !=# 'defx'
+        set guicursor=
+        set nocul
+      else
+        set guicursor=n-v-c:hor1
+        set cul
+      endif
     endif
   endfunction
 
