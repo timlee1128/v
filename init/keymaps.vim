@@ -78,6 +78,9 @@ let g:which_key_map.f.c = 'Open Coc Config'
 nnoremap <silent> <leader>fs :<C-u>source %<CR>
 let g:which_key_map.f.s = 'Source current file'
 
+nnoremap <silent> <leader>fb :<c-u>Clap buffers<cr>
+let g:which_key_map.f.b = 'Find buffer'
+
 
 "----------------------------------------------------------------------
 " 跳转快捷键定义
