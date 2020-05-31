@@ -120,6 +120,8 @@ if index(g:bundle_group, 'basic') >= 0
 	  \ defx#do_action('repeat')
 	  nnoremap <silent><buffer><expr> h
 	  \ defx#do_action('cd', ['..'])
+	  nnoremap <silent><buffer><expr> l
+	  \ defx#do_action('open')
 	  nnoremap <silent><buffer><expr> ~
 	  \ defx#do_action('cd')
 	  nnoremap <silent><buffer><expr> i
