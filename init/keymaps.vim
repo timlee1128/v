@@ -190,3 +190,5 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " 使用 <CR> 确认补全，并触发 coc.nvim 的 `formatOnType` 功能
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+let g:coc_snippet_next = '<tab>'

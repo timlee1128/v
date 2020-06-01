@@ -55,6 +55,7 @@ Plug 'liuchengxu/vista.vim'
 let g:vista_sidebar_width = 40
 let g:vista_default_executive = 'coc'
 
+Plug 'honza/vim-snippets'
 "----------------------------------------------------------------------
 " 基础插件
 "----------------------------------------------------------------------
@@ -290,7 +291,8 @@ let g:coc_global_extensions=[
       \ 'coc-emmet',
       \ 'coc-vetur',
       \ 'coc-vimlsp',
-      \ 'coc-yank'
+      \ 'coc-yank',
+      \ 'coc-snippets'
       \]
 
 if has('nvim')
