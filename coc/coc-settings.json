@@ -2,5 +2,6 @@
   "eslint.autoFix": true,
   "eslint.run": "onSave",
   "eslint.enable": true,
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnType": true
 }

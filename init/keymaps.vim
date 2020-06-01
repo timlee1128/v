@@ -169,6 +169,12 @@ let g:which_key_map.t.t = 'Translate the word under cursor'
 "----------------------------------------------------------------------
 " Coc
 "----------------------------------------------------------------------
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " 使用 <tab> 补全
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -178,7 +184,6 @@ inoremap <silent><expr> <TAB>
 " 使用 <shift-tab> 反向补全
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" 使用 <CR> 确认补全，并触发 coc.nvim 的 `formatOnType` 功能
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
