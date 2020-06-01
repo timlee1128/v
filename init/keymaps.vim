@@ -137,8 +137,11 @@ map <silent> <Leader>gd :Gvdiffsplit<CR>
 let g:which_key_map.g.b = "Git blame"
 map <silent> <Leader>gb :Gblame<CR>
 
-let g:which_key_map.g.a = 'Git add'
-map <silent> <Leader>ga :Gwrite<CR>
+let g:which_key_map.g.a = 'Git add all'
+map <silent> <Leader>ga :Git add .<CR>
+
+let g:which_key_map.g.w = 'Git write current file'
+map <silent> <Leader>gw :Gwrite<CR>
 
 let g:which_key_map.g.c = 'Git commit'
 map <silent> <Leader>gc :Gcommit<CR>
