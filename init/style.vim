@@ -304,6 +304,8 @@ endif
 if has('nvim')
   autocmd VimEnter * call GuiWindowFullScreen(1)
   if exists('g:GuiLoaded')
+    " nvim-qt 下的 popupmenu 有问题，关闭掉
+    GuiPopupMenu 0
     GuiTabline 0
     GuiFont! Hack Nerd Font:style=Bold:h14
   endif
