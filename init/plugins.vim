@@ -289,7 +289,8 @@ let g:coc_global_extensions=[
       \ 'coc-ecdict',
       \ 'coc-emmet',
       \ 'coc-vetur',
-      \ 'coc-vimlsp'
+      \ 'coc-vimlsp',
+      \ 'coc-yank'
       \]
 
 if has('nvim')
