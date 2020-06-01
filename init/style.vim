@@ -306,7 +306,7 @@ if has('nvim')
   if exists('g:GuiLoaded')
     GuiFont! Hack Nerd Font:style=Bold:h14
     " nvim-qt 下的 popupmenu 有问题，关闭掉
-    GuiPopupMenu 0
+    GuiPopupmenu 0
     GuiTabline 0
   endif
 else
