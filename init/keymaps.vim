@@ -147,7 +147,7 @@ let g:which_key_map.g.c = 'Git commit'
 map <silent> <Leader>gc :Gcommit<CR>
 
 let g:which_key_map.g.p = 'Git push'
-map <silent> <Leader>gp :Gpush<CR>
+map <silent> <Leader>gp :AsyncRun git push<CR>
 
 let g:which_key_map.g.P = 'Git pull'
 map <silent> <Leader>gP :Gpull<CR>
