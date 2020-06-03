@@ -63,8 +63,8 @@ let g:which_key_map.6 = 'which_key_ignore'
 "----------------------------------------------------------------------
 let g:which_key_map['f'] = {'name': '+find'}
 
-" map <leader>ft :NERDTreeToggle<CR>
-map <silent><leader>ft :call Defx_style()<cr>
+map <leader>ft :NERDTreeToggle<CR>
+" map <silent><leader>ft :call Defx_style()<cr>
 let g:which_key_map.f.t = 'Open file tree'
 
 function! Defx_style() abort
