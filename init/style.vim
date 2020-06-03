@@ -317,6 +317,7 @@ endif
 "----------------------------------------------------------------------
 " which-key 设置
 "----------------------------------------------------------------------
+let g:which_key_hspace = 7
 highlight default link WhichKey          Function
 highlight default link WhichKeySeperator Number
 highlight default link WhichKeyGroup     Keyword
