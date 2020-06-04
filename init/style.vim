@@ -31,8 +31,8 @@ set showcmd
 " 因为 statusline 已经集成
 set noshowmode
 
-" 水平切割窗口时，默认在右边显示新窗口
-set splitright
+" 水平切割窗口时，默认在左边显示新窗口
+set nosplitright
 
 
 "----------------------------------------------------------------------
