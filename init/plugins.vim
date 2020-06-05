@@ -61,6 +61,7 @@ Plug 'honza/vim-snippets'
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'basic') >= 0
 	Plug 'preservim/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
  
 	" 界面 icon 美化
 	Plug 'ryanoasis/vim-devicons'
