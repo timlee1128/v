@@ -61,13 +61,10 @@ Plug 'honza/vim-snippets'
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'basic') >= 0
 	Plug 'preservim/nerdtree'
-	" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  
-	" nerdtree 美化
-	" Plug 'vwxyutarooo/nerdtree-devicons-syntax'     
-
+ 
 	" 界面 icon 美化
 	Plug 'ryanoasis/vim-devicons'
+  let g:webdevicons_enable_nerdtree = 0
 
   if !has('nvim') && 0
     Plug 'shougo/defx.nvim'
