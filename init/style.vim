@@ -333,3 +333,18 @@ let g:clap_layout = { 'relative': 'editor' }
 let g:clap_enable_icon = 1
 let g:clap_provider_grep_enable_icon = 1
 let g:clap_current_selection_sign= { 'text': '➤', 'texthl': "ClapCurrentSelectionSign", "linehl": "ClapCurrentSelection"}
+
+
+"----------------------------------------------------------------------
+" startify
+"----------------------------------------------------------------------
+let g:startify_name = [
+      \'___________.__         ',
+      \'\__    ___/|__| _____  ',
+      \'  |    |   |  |/     \ ',
+      \'  |    |   |  |  Y Y  \',
+      \'  |____|   |__|__|_|  /',
+      \'                    \/ ',
+      \]
+
+let g:startify_custom_header = startify#center(g:startify_name)
