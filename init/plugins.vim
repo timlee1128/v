@@ -174,7 +174,7 @@ if index(g:bundle_group, 'basic') >= 0
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
-	
+  au FileType python let b:delimitMate_nesting_quotes = ['"', '`']
 	" 增加cs, ds, ys等操作符, 用来快速输入包裹符号
 	Plug 'tpope/vim-surround'
 
