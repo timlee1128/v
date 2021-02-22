@@ -4,5 +4,7 @@
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnType": true,
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "typescript.suggestionActions.enabled": false,
+  "javascript.suggestionActions.enabled": false
 }
