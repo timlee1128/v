@@ -1,6 +1,27 @@
 "----------------------------------------------------------------------
 " 显示设置
 "----------------------------------------------------------------------
+" 光标行和光标栏
+au WinEnter * set cursorline nocursorcolumn
+au InsertLeave * set cursorline nocursorcolumn
+au InsertEnter * set nocursorline cursorcolumn
+
+" 光标样式
+" 0  -> blinking block.
+" 1  -> blinking block (default).
+" 2  -> steady block.
+" 3  -> blinking underline.
+" 4  -> steady underline.
+" 5  -> blinking bar (xterm).
+" 6  -> steady bar (xterm).
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" Optionally reset the cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
 
 " 总是显示状态栏
 set laststatus=2
@@ -311,7 +332,7 @@ if has('nvim')
   endif
 else
   " 启动时开启全屏
-  set fu
+  " set fu
 endif
 
 "----------------------------------------------------------------------
