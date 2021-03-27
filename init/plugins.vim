@@ -56,11 +56,25 @@ let g:vista_sidebar_width = 40
 let g:vista_default_executive = 'coc'
 
 Plug 'honza/vim-snippets'
+Plug 'leafgarland/typescript-vim'
+let g:typescript_indent_disable = 1
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'othree/javascript-libraries-syntax.vim'
+let g:used_javascript_libs = 'underscore,react'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'ap/vim-css-color'
+Plug 'terryma/vim-expand-region'
+" Plug 'alpertuna/vim-header'
+Plug 'roxma/vim-paste-easy'
+
 "----------------------------------------------------------------------
 " 基础插件
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'basic') >= 0
 	Plug 'preservim/nerdtree'
+  let g:NERDTreeIgnore = ['^node_modules$']
   Plug 'Xuyuanp/nerdtree-git-plugin'
   let NERDTreeMinimalUI=1
  
@@ -266,6 +280,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 let g:coc_config_home = s:path('coc')
 let g:coc_disable_startup_warning = 1
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " TextEdit might fail if hidden is not set.
 set hidden

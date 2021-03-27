@@ -1,4 +1,11 @@
 "----------------------------------------------------------------------
+" 智能选择区域
+"----------------------------------------------------------------------
+" v选择下个单词/段落 ctrl-v回退选择
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+"----------------------------------------------------------------------
 " 粘贴板
 "----------------------------------------------------------------------
 noremap ]y "*y
@@ -114,21 +121,27 @@ let g:which_key_map.j.e.p = 'Jump to prev error'
 
 nmap <silent> <Leader>jd <Plug>(coc-definition)
 let g:which_key_map.j.d = 'Jump to definition'
-nmap <silent> <Leader>jc <Plug>(coc-declaration)
-let g:which_key_map.j.c = 'Jump to declaration'
+
+nmap <silent> <Leader>jt <Plug>(coc-type-definition)
+let g:which_key_map.j.t = 'Jump to type'
+
+nmap <silent> <Leader>jD <Plug>(coc-declaration)
+let g:which_key_map.j.D = 'Jump to Declaration'
+
 nmap <silent> <Leader>ji <Plug>(coc-implementation)
 let g:which_key_map.j.i = 'Jump to implementation'
+
 nmap <silent> <Leader>jr <Plug>(coc-references)
 let g:which_key_map.j.r = 'Jump to references'
+
 nmap <silent> <Leader>jl <Plug>(coc-openlink)
 let g:which_key_map.j.l = 'Jump to link'
 
 map <silent> <Leader>jf <Plug>(easymotion-overwin-f)
 let g:which_key_map.j.f = 'Jump to finded char'
 
-map <silent><Leader>jt :<c-u>Vista!!<CR>
-let g:which_key_map.j.t = 'Jump to tag'
-
+map <silent><Leader>jT :<c-u>Vista!!<CR>
+let g:which_key_map.j.T = 'Jump to tag'
 "----------------------------------------------------------------------
 " Git 快捷键定义
 "----------------------------------------------------------------------
@@ -163,6 +176,26 @@ map <silent> <Leader>gf :Gfetch<CR>
 
 let g:which_key_map.g.l = 'Git log'
 map <silent> <Leader>gl :Gllog<CR>
+
+"----------------------------------------------------------------------
+" Buffer
+"----------------------------------------------------------------------
+let g:which_key_map['b'] = {'name': '+buffer'}
+" 自动整理当前buffer所有import引用，包括删除未使用到的import、多import归类整理、排序
+let g:which_key_map.b.i = 'Organize Import' 
+nnoremap <silent> <Leader>bi :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+
+let g:which_key_map.b.f = 'Format buffer'
+nnoremap <silent> <Leader>bf :call CocAction('format')<CR>
+
+let g:which_key_map.b.r = 'Rename'
+nmap <Leader>br <Plug>(coc-rename)
+
+let g:which_key_map.b.R = 'Refactor'
+nmap <Leader>bR <Plug>(coc-refactor)
+
+let g:which_key_map.b.x = 'Fix'
+nmap <Leader>bx <Plug>(coc-fix-current)
 "----------------------------------------------------------------------
 " 工具箱
 "----------------------------------------------------------------------
