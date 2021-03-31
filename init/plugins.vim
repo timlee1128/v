@@ -68,6 +68,8 @@ Plug 'ap/vim-css-color'
 Plug 'terryma/vim-expand-region'
 " Plug 'alpertuna/vim-header'
 Plug 'roxma/vim-paste-easy'
+" 书签功能增强
+Plug 'kshenoy/vim-signature'
 
 "----------------------------------------------------------------------
 " 基础插件
