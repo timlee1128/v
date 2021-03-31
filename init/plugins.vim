@@ -70,6 +70,10 @@ Plug 'terryma/vim-expand-region'
 Plug 'roxma/vim-paste-easy'
 " 书签功能增强
 Plug 'kshenoy/vim-signature'
+Plug 'heavenshell/vim-jsdoc', {
+      \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
+      \ 'do': 'make install'
+      \}
 
 "----------------------------------------------------------------------
 " 基础插件

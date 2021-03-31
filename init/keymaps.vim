@@ -196,6 +196,12 @@ nmap <Leader>bR <Plug>(coc-refactor)
 
 let g:which_key_map.b.x = 'Fix'
 nmap <Leader>bx <Plug>(coc-fix-current)
+
+" TODO: 需要检查文档类型为js、ts再绑定键盘映射
+let g:which_key_map.b.d = 'Doc function'
+map <silent> <Leader>bd :JsDoc<CR>
+let g:which_key_map.b.D = 'Doc buffer'
+map <silent> <Leader>bD :JsDocFormat<CR>
 "----------------------------------------------------------------------
 " 工具箱
 "----------------------------------------------------------------------
