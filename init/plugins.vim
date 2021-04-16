@@ -74,6 +74,7 @@ Plug 'heavenshell/vim-jsdoc', {
       \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
       \ 'do': 'make install'
       \}
+Plug 'yggdroot/indentline'
 
 "----------------------------------------------------------------------
 " 基础插件
@@ -191,6 +192,8 @@ if index(g:bundle_group, 'basic') >= 0
 
 	" Git 支持
 	Plug 'tpope/vim-fugitive'
+  " TODO: Git gutter config
+  Plug 'airblade/vim-gitgutter'
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
