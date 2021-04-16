@@ -74,6 +74,7 @@ Plug 'heavenshell/vim-jsdoc', {
       \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
       \ 'do': 'make install'
       \}
+Plug 'yggdroot/indentline'
 
 "----------------------------------------------------------------------
 " 基础插件
