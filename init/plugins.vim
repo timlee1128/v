@@ -181,6 +181,9 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'myusuf3/numbers.vim'
 
 	" 用于在侧边符号栏显示 git/svn 的 diff
+  " TODO: 使用gitgutter替代,
+  " 因为signify没法stage hunk,
+  " 优点是支持各种vcs
 	Plug 'mhinz/vim-signify'
 	" signify 调优
 	let g:signify_vcs_list = ['git', 'svn']
