@@ -195,6 +195,8 @@ if index(g:bundle_group, 'basic') >= 0
 
 	" Git 支持
 	Plug 'tpope/vim-fugitive'
+  Plug 'apzelos/blamer.nvim'
+  let g:blamer_enabled = 1
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
