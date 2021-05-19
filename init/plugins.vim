@@ -197,6 +197,11 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'tpope/vim-fugitive'
   Plug 'apzelos/blamer.nvim'
   let g:blamer_enabled = 1
+  let g:blamer_show_in_insert_modes = 0
+  let g:blamer_delay = 500
+  " let g:blamer_prefix = ' > '
+  let g:blamer_relative_time = 1
+  let g:blamer_date_format = '%Y-%m-%d %H:%M'
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
