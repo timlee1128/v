@@ -181,6 +181,9 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'myusuf3/numbers.vim'
 
 	" 用于在侧边符号栏显示 git/svn 的 diff
+  " TODO: 使用gitgutter替代,
+  " 因为signify没法stage hunk,
+  " 优点是支持各种vcs
 	Plug 'mhinz/vim-signify'
 	" signify 调优
 	let g:signify_vcs_list = ['git', 'svn']
@@ -192,8 +195,17 @@ if index(g:bundle_group, 'basic') >= 0
 
 	" Git 支持
 	Plug 'tpope/vim-fugitive'
+
   " TODO: Git gutter config
   Plug 'airblade/vim-gitgutter'
+
+  Plug 'apzelos/blamer.nvim'
+  let g:blamer_enabled = 1
+  let g:blamer_show_in_insert_modes = 0
+  let g:blamer_delay = 500
+  " let g:blamer_prefix = ' > '
+  let g:blamer_relative_time = 1
+  let g:blamer_date_format = '%Y-%m-%d %H:%M'
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
