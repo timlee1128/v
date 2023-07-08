@@ -324,7 +324,7 @@ if has('gui_running')
 endif
 
 if has('nvim')
-  autocmd VimEnter * call GuiWindowFullScreen(1)
+  " autocmd VimEnter * call nvim_win_set_option(0, 'winfullscreen', v:true)
   if exists('g:GuiLoaded')
     GuiFont! Hack Nerd Font:style=Bold:h14
     " nvim-qt 下的 popupmenu 有问题，关闭掉

@@ -24,18 +24,18 @@ call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
 
 " 代码运行和调试
 
-“ 代码测试和覆盖率
+" 代码测试和覆盖率
 
-” 代码片段和模版
+" 代码片段和模版
 
 " 语法高亮增强
 
 " 文档与注释
 Plug 'tpope/vim-commentary'  " 快速注释
 
-” 符号查找、替换、跳转
+" 符号查找、替换、跳转
 
-“ 自动保存和恢复
+" 自动保存和恢复
 
 " 代码折叠
 
@@ -58,16 +58,21 @@ au FileType python let b:delimitMate_nesting_quotes = ['"', '`']  " python中三
 Plug 'luochen1990/rainbow'  " 美化
 let g:rainbow_active=1
 
-“ 格式化
+" 格式化
 
 "----------------------------------------------------------------------
 " 文件和项目管理
 "----------------------------------------------------------------------
 " 文件目录树
+Plug 'nvim-tree/nvim-web-devicons' " optional, 需要安装字体, 并在iterm2中设置
+Plug 'nvim-tree/nvim-tree.lua'
+let g:nvim_tree_show_line_numbers = 0
 
-“ 文件搜索
+" 文件搜索
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
-” 代码版本控制
+" 代码版本控制
 " TODO: 侧栏Diff
 
 "----------------------------------------------------------------------
@@ -75,16 +80,16 @@ let g:rainbow_active=1
 "----------------------------------------------------------------------
 " 开始画面
 Plug 'mhinz/vim-startify'  " 显示最近编辑过的文件
-let g:startify_name = [
-      \'___________.__         ',
-      \'\__    ___/|__| _____  ',
-      \'  |    |   |  |/     \ ',
-      \'  |    |   |  |  Y Y  \',
-      \'  |____|   |__|__|_|  /',
-      \'                    \/ ',
-      \]
+" let g:startify_name = [
+"       \'___________.__         ',
+"       \'\__    ___/|__| _____  ',
+"       \'  |    |   |  |/     \ ',
+"       \'  |    |   |  |  Y Y  \',
+"       \'  |____|   |__|__|_|  /',
+"       \'                    \/ ',
+"       \]
 
-let g:startify_custom_header = startify#center(g:startify_name)
+" let g:startify_custom_header = startify#center(g:startify_name)
 
 " 主题和配色
 Plug 'flazz/vim-colorschemes'  " 一次性安装许多主题
@@ -97,16 +102,16 @@ Plug 'myusuf3/numbers.vim'  " 行号相对化
 " 缩进线
 Plug 'yggdroot/indentline'
 
-“ 字体设置
+" 字体设置
 
-“ 窗口和标签页
+" 窗口和标签页
 
 " 状态栏和标签栏
 
 "----------------------------------------------------------------------
 " 辅助功能
 "----------------------------------------------------------------------
-“ 快捷键映射
+" 快捷键映射
 Plug 'liuchengxu/vim-which-key'
 let g:which_key_hspace = 7
 highlight default link WhichKey          Function
@@ -115,7 +120,7 @@ highlight default link WhichKeyGroup     Keyword
 highlight default link WhichKeyDesc      Identifier
 highlight WhichKeyFloating  guifg=#000000 ctermfg=0
 
-” 剪贴板共享
+" 剪贴板共享
 
 " 表格对齐
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }  " 使用命令 Tabularize
@@ -129,3 +134,57 @@ Plug 'tpope/vim-repeat'  " 使得 >, <, gU, gu, J, dd, yy, cc等命令都可以�
 " 插件安装结束
 "----------------------------------------------------------------------
 call plug#end()
+
+"----------------------------------------------------------------------
+" 中英文输入法自动切换, Mac下需要inputsource可执行文件, 其他系统可另寻方法
+" 参考: https://github.com/lyokha/vim-xkbswitch
+"----------------------------------------------------------------------
+" 定义全局变量用于保存输入法状态
+let g:last_input_method = ''
+let g:out_input_method = ''
+
+if has('mac')
+  " 进入vim以后自动设置成英文
+  autocmd VimEnter * call SwitchToEnglish()
+  
+  function! SwitchToEnglish() abort
+    call system(s:path('inputsource/inputsource com.apple.keylayout.ABC'))
+    redraw!
+  endfunction
+
+  " 获得焦点的时候保存当前输入法状态并切换到英文输入法
+  autocmd FocusGained * call SaveOutInputMethodAndSwitchToEnglish()
+  autocmd FocusLost * call RestoreOutInputMethod()
+
+  function! SaveOutInputMethodAndSwitchToEnglish() abort
+    let g:out_input_method = system(s:path('inputsource/inputsource'))
+    call system(s:path('inputsource/inputsource com.apple.keylayout.ABC'))
+    redraw!
+  endfunction
+
+  function! RestoreOutInputMethod() abort
+    if g:out_input_method !=# 'com.apple.keylayout.ABC'
+      call system(s:path('inputsource/inputsource ' . g:last_input_method))
+      redraw!
+    endif
+  endfunction
+
+  " 设置离开插入模式时保存当前输入法状态并切换到英文输入法
+  autocmd InsertLeave * call SaveInputMethodAndSwitchToEnglish()
+
+  function! SaveInputMethodAndSwitchToEnglish() abort
+    let g:last_input_method = system(s:path('inputsource/inputsource'))
+    call system(s:path('inputsource/inputsource com.apple.keylayout.ABC'))
+    redraw!
+  endfunction
+
+  " 设置回到插入模式时恢复上次的输入法状态
+  autocmd InsertEnter * call RestoreInputMethod()
+
+  function! RestoreInputMethod() abort
+    if g:last_input_method !=# 'com.apple.keylayout.ABC'
+      call system(s:path('inputsource/inputsource ' . g:last_input_method))
+      redraw!
+    endif
+  endfunction
+endif

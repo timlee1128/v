@@ -43,8 +43,11 @@ LoadScript init/tabsize.vim
 " 插件加载
 LoadScript init/plugins.vim
 
+lua require('config')
+
 " 自定义按键
 LoadScript init/keymaps.vim
 
 " 界面样式
 LoadScript init/style.vim
+
