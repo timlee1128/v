@@ -335,38 +335,3 @@ else
   " 启动时开启全屏
   " set fu
 endif
-
-"----------------------------------------------------------------------
-" which-key 设置
-"----------------------------------------------------------------------
-let g:which_key_hspace = 7
-highlight default link WhichKey          Function
-highlight default link WhichKeySeperator Number
-highlight default link WhichKeyGroup     Keyword
-highlight default link WhichKeyDesc      Identifier
-highlight WhichKeyFloating  guifg=#000000 ctermfg=0
-
-
-"----------------------------------------------------------------------
-" clap 设置
-"----------------------------------------------------------------------
-let g:clap_theme = 'material_design_dark'
-let g:clap_layout = { 'relative': 'editor' }
-let g:clap_enable_icon = 1
-let g:clap_provider_grep_enable_icon = 1
-let g:clap_current_selection_sign= { 'text': '➤', 'texthl': "ClapCurrentSelectionSign", "linehl": "ClapCurrentSelection"}
-
-
-"----------------------------------------------------------------------
-" startify
-"----------------------------------------------------------------------
-let g:startify_name = [
-      \'___________.__         ',
-      \'\__    ___/|__| _____  ',
-      \'  |    |   |  |/     \ ',
-      \'  |    |   |  |  Y Y  \',
-      \'  |____|   |__|__|_|  /',
-      \'                    \/ ',
-      \]
-
-let g:startify_custom_header = startify#center(g:startify_name)
